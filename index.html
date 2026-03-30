@@ -1,156 +1,669 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Proteksi Bisnis - Jekson</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>PT. Surya Garansindo Perkasa | Solusi Jaminan Terpercaya</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<style>
-body {
-    margin:0;
-    font-family: 'Segoe UI', sans-serif;
-    background:#f5f7fa;
-}
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1e2a3e;
+            background-color: #ffffff;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
 
-/* HERO */
-.hero {
-    background: linear-gradient(135deg, #1f4037, #2c5364);
-    color:white;
-    padding:80px 20px;
-    text-align:center;
-}
-.hero h1 {
-    font-size:32px;
-    margin-bottom:15px;
-}
-.hero p {
-    font-size:16px;
-    opacity:0.9;
-}
+        /* Container */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
 
-/* BUTTON */
-.btn {
-    background:#25D366;
-    color:white;
-    padding:15px 25px;
-    border-radius:50px;
-    text-decoration:none;
-    display:inline-block;
-    margin-top:20px;
-    font-weight:bold;
-    transition:0.3s;
-}
-.btn:hover {
-    transform:scale(1.05);
-}
+        /* Typography */
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
 
-/* SECTION */
-.section {
-    padding:50px 20px;
-    text-align:center;
-}
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: #0a2b3e;
+        }
+        
+        .section-title .underline {
+            width: 70px;
+            height: 4px;
+            background: #e67e22;
+            margin: 12px auto 0;
+            border-radius: 2px;
+        }
 
-/* CARD */
-.cards {
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-}
-.card {
-    background:white;
-    margin:10px;
-    padding:20px;
-    border-radius:15px;
-    width:260px;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-}
+        /* Buttons */
+        .btn-primary {
+            display: inline-block;
+            background-color: #e67e22;
+            color: white;
+            padding: 12px 32px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        
+        .btn-primary:hover {
+            background-color: #bf5e00;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
 
-/* DARK */
-.dark {
-    background:#2c3e50;
-    color:white;
-}
-
-/* TESTIMONI */
-.testimoni {
-    font-style:italic;
-    margin-top:20px;
-}
-
-/* FLOATING WA */
-.wa-float {
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    color:white;
-    padding:15px;
-    border-radius:50%;
-    font-size:20px;
-    text-decoration:none;
-}
-</style>
-
+        /* Header / Navbar */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(2px);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            flex-wrap: wrap;
+        }
+        
+        .logo h1 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #0a2b3e;
+        }
+        
+        .logo span {
+            color: #e67e22;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #1e2a3e;
+            transition: 0.2s;
+        }
+        
+        .nav-links a:hover {
+            color: #e67e22;
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #f9fafc 0%, #eef2f7 100%);
+            padding: 80px 0;
+        }
+        
+        .hero .container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .hero-content {
+            flex: 1;
+        }
+        
+        .hero-content h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: #0a2b3e;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            max-width: 550px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .about-grid {
+            display: flex;
+            gap: 3rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+        
+        .about-text {
+            flex: 1.5;
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: #2d3e50;
+        }
+        
+        /* Budaya (Values) */
+        .values {
+            background-color: #f8fafc;
+            padding: 80px 0;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .value-card {
+            background: white;
+            padding: 2rem 1.5rem;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+            transition: 0.25s;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
+        }
+        
+        .value-icon {
+            font-size: 3rem;
+            color: #e67e22;
+            margin-bottom: 1rem;
+        }
+        
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        /* Layanan Section */
+        .services {
+            padding: 80px 0;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background: #ffffff;
+            border-radius: 24px;
+            padding: 2rem;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+            border: 1px solid #edf2f7;
+            transition: 0.2s;
+        }
+        
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: #0a2b3e;
+        }
+        
+        .service-card ul {
+            list-style: none;
+            margin-top: 1rem;
+        }
+        
+        .service-card li {
+            margin: 0.75rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .service-card i.fa-check-circle {
+            color: #e67e22;
+        }
+        
+        /* Penjelasan Bank Garansi & Surety Bond */
+        .explanation {
+            background: #f1f5f9;
+            padding: 80px 0;
+        }
+        
+        .explanation-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .explain-item {
+            flex: 1;
+            background: white;
+            border-radius: 28px;
+            padding: 2rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+        }
+        
+        .explain-item h3 {
+            font-size: 1.8rem;
+            color: #0a2b3e;
+            margin-bottom: 1rem;
+            border-left: 5px solid #e67e22;
+            padding-left: 1rem;
+        }
+        
+        .explain-item p {
+            margin: 1rem 0;
+            line-height: 1.6;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(120deg, #0a2b3e, #1e4a6b);
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+        
+        .cta h2 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .btn-light {
+            background: white;
+            color: #0a2b3e;
+            padding: 12px 32px;
+            border-radius: 40px;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.2s;
+        }
+        
+        .btn-light:hover {
+            background: #e67e22;
+            color: white;
+            transform: scale(1.02);
+        }
+        
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 40px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo h3 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin: 0.5rem 0;
+        }
+        
+        .footer-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            color: #e67e22;
+        }
+        
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #2d3a4e;
+            padding-top: 1.5rem;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 1rem;
+                padding: 1rem 0;
+                text-align: center;
+            }
+            
+            .nav-links.active {
+                display: flex;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .explanation-grid {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
-
 <body>
-
-<!-- HERO -->
-<div class="hero">
-    <h1>1 Kecelakaan Kerja Bisa Rugi Ratusan Juta</h1>
-    <p>Lindungi bisnis Anda sebelum terlambat</p>
-    <a class="btn" href="https://wa.me/6285727925753?text=Halo%20saya%20tertarik%20asuransi%20bisnis">Konsultasi Gratis</a>
-</div>
-
-<!-- MASALAH -->
-<div class="section">
-    <h2>Risiko Nyata di Dunia Bisnis</h2>
-    <p>Kejadian tak terduga bisa menghancurkan keuangan perusahaan dalam sekejap</p>
-</div>
-
-<!-- LAYANAN -->
-<div class="section dark">
-    <h2>Layanan Kami</h2>
-
-    <div class="cards">
-        <div class="card">
-            <h3>Asuransi Karyawan</h3>
-            <p>Perlindungan tenaga kerja & kecelakaan</p>
+    <header>
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <h1>Surya <span>Garansindo</span></h1>
+                </div>
+                <div class="menu-toggle" id="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#about">Tentang</a></li>
+                    <li><a href="#values">Budaya</a></li>
+                    <li><a href="#services">Layanan</a></li>
+                    <li><a href="#explanation">Jaminan</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </div>
         </div>
+    </header>
 
-        <div class="card">
-            <h3>Asuransi Proyek</h3>
-            <p>Proteksi proyek konstruksi</p>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Mitra Terpercaya Solusi Jaminan & Asuransi Anda</h1>
+                    <p>PT. Surya Garansindo Perkasa hadir sebagai Total Service Provider Solution dengan integritas dan inovasi tinggi.</p>
+                    <a href="#services" class="btn-primary">Layanan Kami <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://placehold.co/500x400/EEF2F6/1E293B?text=Garansi+Profesional" alt="Ilustrasi Jaminan Profesional">
+                </div>
+            </div>
+        </section>
+
+        <!-- Tentang Kami -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h2>Tentang Kami</h2>
+                        <p><strong>PT. SURYA GARANSINDO PERKASA</strong> didirikan dan dikelola secara profesional oleh tenaga-tenaga ahli yang berpengalaman dibidangnya masing-masing. Kami berkomitmen untuk memberikan pelayanan secara <strong>Total Service Provider Solution</strong>, menjawab kebutuhan jaminan dan asuransi dengan pendekatan yang cepat, aman, dan terpercaya.</p>
+                        <p>Dengan jaringan luas dan keahlian teknis, kami menjadi mitra strategis bagi berbagai perusahaan swasta, BUMN, hingga lembaga pemerintah dalam mengamankan proyek dan kontrak kerja.</p>
+                    </div>
+                    <div class="about-image" style="flex:1; text-align:center;">
+                        <img src="https://placehold.co/400x300/FFFFFF/0A2B3E?text=Profesional+&+Terpercaya" style="border-radius: 28px; width:100%; max-width:350px;" alt="Tentang Kami">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Budaya Kami : Competence, Integrity, Innovation, Care -->
+        <section class="values" id="values">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Budaya Kami</h2>
+                    <div class="underline"></div>
+                    <p style="margin-top: 0.5rem;">Nilai-nilai yang menjadi fondasi pelayanan kami</p>
+                </div>
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-chalkboard-user"></i></div>
+                        <h3>Competence</h3>
+                        <p>Memiliki keahlian, pengetahuan, perilaku dan sikap untuk melaksanakan pekerjaan dengan memuaskan.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                        <h3>Integrity</h3>
+                        <p>Melakukan apa yang dikatakan dan mengatakan apa yang dilakukan secara profesional.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h3>Innovation</h3>
+                        <p>Menghasilkan cara-cara yang lebih tepat dalam bekerja untuk kepuasan klien.</p>
+                    </div>
+                    <div class="value-card">
+                        <div class="value-icon"><i class="fas fa-heart"></i></div>
+                        <h3>Care</h3>
+                        <p>Menunjukkan kepedulian, penghargaan, dan saling membantu kepada semua stakeholder.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Layanan Kami -->
+        <section class="services" id="services">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Layanan Kami</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3><i class="fas fa-landmark"></i> Bank Garansi</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Jaminan Penawaran</li>
+                            <li><i class="fas fa-check-circle"></i> Jaminan Pelaksanaan</li>
+                            <li><i class="fas fa-check-circle"></i> Jaminan Uang Muka</li>
+                            <li><i class="fas fa-check-circle"></i> Jaminan Pemeliharaan</li>
+                            <li><i class="fas fa-check-circle"></i> Jaminan Lainnya</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <h3><i class="fas fa-file-signature"></i> Surety Bond</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Jaminan Penawaran</li>
+                            <li><i class="fas fa-check-circle"></i> Jaminan Pelaksanaan</li>
+                            <li><i class="fas fa-check-circle"></i> Jaminan Uang Muka</li>
+                            <li><i class="fas fa-check-circle"></i> Jaminan Pemeliharaan</li>
+                            <li><i class="fas fa-check-circle"></i> Jaminan Khusus Lainnya</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <h3><i class="fas fa-shield-alt"></i> General Insurance</h3>
+                        <ul>
+                            <li><i class="fas fa-check-circle"></i> Personal Accident</li>
+                            <li><i class="fas fa-check-circle"></i> Contractors All Risk</li>
+                            <li><i class="fas fa-check-circle"></i> Marine Cargo & Hull</li>
+                            <li><i class="fas fa-check-circle"></i> Property All Risk & Fire</li>
+                            <li><i class="fas fa-check-circle"></i> Liability & Money Insurance</li>
+                        </ul>
+                    </div>
+                    <div class="service-card">
+                        <h3><i class="fas fa-chart-line"></i> Custom Bond</h3>
+                        <p>Jaminan khusus yang disesuaikan dengan kebutuhan dan karakteristik bisnis perusahaan Anda. Fleksibel, inovatif, dan tepat sasaran.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Penjelasan Bank Garansi & Surety Bond -->
+        <section class="explanation" id="explanation">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Sekilas Mengenai</h2>
+                    <div class="underline"></div>
+                </div>
+                <div class="explanation-grid">
+                    <div class="explain-item">
+                        <h3>Bank Garansi</h3>
+                        <p>Bank Garansi adalah jaminan tertulis yang diterbitkan oleh bank kepada penerima jaminan (obligee) atas permintaan nasabah (principal), yang menyatakan bahwa bank akan membayar sejumlah uang tertentu apabila nasabah tidak memenuhi kewajibannya sesuai perjanjian atau kontrak yang telah disepakati.</p>
+                        <p>Dalam praktiknya, bank garansi memberikan kepastian dan perlindungan terhadap risiko wanprestasi, serta meningkatkan kepercayaan dalam pelaksanaan transaksi atau proyek. Jenisnya meliputi Jaminan Penawaran, Pelaksanaan, Uang Muka, Pemeliharaan, dan lainnya.</p>
+                    </div>
+                    <div class="explain-item">
+                        <h3>Surety Bond</h3>
+                        <p>Surety Bond adalah bentuk jaminan yang diterbitkan oleh perusahaan penjamin (surety) untuk menjamin bahwa pihak terjamin (principal) akan memenuhi kewajiban dan tanggung jawabnya kepada pihak penerima jaminan (obligee) sesuai dengan kontrak yang disepakati.</p>
+                        <p>Surety bond memberikan perlindungan atas risiko kegagalan pelaksanaan pekerjaan atau kewajiban, khususnya dalam proyek pengadaan dan konstruksi. Jenisnya meliputi Jaminan Penawaran, Pelaksanaan, Uang Muka, Pemeliharaan, dan lainnya sesuai kebutuhan proyek.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta" id="contact">
+            <div class="container">
+                <h2>Butuh Jaminan & Solusi Asuransi Terbaik?</h2>
+                <p>Hubungi tim profesional kami untuk konsultasi gratis dan solusi tepat guna.</p>
+                <a href="#" class="btn-light" id="contactBtn"><i class="fas fa-envelope"></i> Hubungi Kami Sekarang</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h3>PT. Surya Garansindo Perkasa</h3>
+                    <p>Total Service Provider Solution</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Jakarta, Indonesia</p>
+                    <p><i class="fas fa-phone-alt"></i> +62 21 1234 5678</p>
+                    <p><i class="fas fa-envelope"></i> info@suryagaransindo.com</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navigasi</h4>
+                    <ul>
+                        <li><a href="#home">Beranda</a></li>
+                        <li><a href="#about">Tentang</a></li>
+                        <li><a href="#services">Layanan</a></li>
+                        <li><a href="#values">Budaya</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Layanan Unggulan</h4>
+                    <ul>
+                        <li><a href="#">Bank Garansi</a></li>
+                        <li><a href="#">Surety Bond</a></li>
+                        <li><a href="#">General Insurance</a></li>
+                        <li><a href="#">Custom Bond</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 PT. Surya Garansindo Perkasa. Seluruh hak cipta dilindungi.</p>
+            </div>
         </div>
+    </footer>
 
-        <div class="card">
-            <h3>Asuransi Cargo</h3>
-            <p>Perlindungan pengiriman barang</p>
-        </div>
-    </div>
-</div>
+    <script>
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+        
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
 
-<!-- TENTANG -->
-<div class="section">
-    <h2>Tentang Saya</h2>
-    <p>Saya Jekson, konsultan asuransi yang membantu bisnis menghindari kerugian besar akibat risiko tak terduga.</p>
-</div>
-
-<!-- TESTIMONI -->
-<div class="section dark">
-    <h2>Apa Kata Klien</h2>
-    <p class="testimoni">"Kami sangat terbantu saat terjadi klaim besar"</p>
-</div>
-
-<!-- CTA -->
-<div class="section">
-    <h2>Konsultasi GRATIS Sekarang</h2>
-    <p>Tanpa biaya, tanpa komitmen</p>
-    <a class="btn" href="https://wa.me/6285727925753?text=Halo%20saya%20ingin%20konsultasi%20asuransi%20bisnis">Chat WhatsApp</a>
-</div>
-
-<!-- FLOATING WA -->
-<a class="wa-float" href="https://wa.me/6285727925753?text=Halo%20saya%20tertarik">💬</a>
-
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                if (targetId === "") return;
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    // Close mobile menu after click
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                    }
+                }
+            });
+        });
+        
+        // Simple contact button alert (demo)
+        const contactBtn = document.getElementById('contactBtn');
+        if(contactBtn) {
+            contactBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert("Terima kasih! Silakan hubungi kami di email: info@suryagaransindo.com atau telepon +62 21 1234 5678 untuk konsultasi lebih lanjut.");
+            });
+        }
+        </script>
 </body>
 </html>
